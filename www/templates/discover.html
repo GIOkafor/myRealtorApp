@@ -1,0 +1,25 @@
+<ion-view view-title="Discover" >
+	<ion-content>
+		<h1 style="text-align:center">Discover page</h1>
+			<div class="card">
+				<labe class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="text" placeholder="Search by max price" ng-model="query"/>
+				</label>
+			</div>
+			<div class="list" >
+				<a class="item item-thumbnail-left" ng-repeat="result in results | filter: query" href="#/tab/discover/{{index}}">
+					<img ng-src="{{result.image}}">
+					<h2>{{result['title_link/_text']}}</h2>
+					<p>{{result.price_value_prices|currency}}</p>
+					<p>{{result.posted_values}}</p>
+				</a>
+			</div>
+	</ion-content>
+</ion-view>
+
+<!-- call to add to watchlist
+
+ng-click="addToWatchlist(result)"
+
+--> 
